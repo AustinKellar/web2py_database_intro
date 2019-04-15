@@ -1,0 +1,28 @@
+{{ extend 'layout.html' }}
+<link rel="stylesheet" type="text/css" href="{{ = URL('static/css', 'movies.css') }}"/>
+
+<h1>{{ = title }}</h1>
+
+<a href="{{ = URL('default', 'insert_movie') }}">
+  <button class="new-movie-button hover-blue">Add New Movie</button>
+</a>
+
+{{ movies = db(db.movies).select() }}
+{{ for movie in movies: }}
+  {{ movie_img_src = URL('default', 'download', args=movie.movie_cover) }}
+  {{ movie.img_src = movie_img_src }}
+{{ pass }}
+
+<div class="all-movies">
+  {{ for movie in movies: }}
+    <a href="{{ = URL('default', 'view_movie_details', args=movie.id) }}">
+      <div class="movie-container hover-pink">
+        <div class="movie-title">{{ = movie.movie_title }}</div>
+        <img class="movie-img" src="{{ = movie.img_src }}"/>
+        <a href="{{ = URL('default', 'delete_movie', args=movie.id) }}">
+          <button class="movie-button hover-blue">Delete</button>
+        </a>
+      </div>
+    </a>
+  {{ pass }}
+</div>

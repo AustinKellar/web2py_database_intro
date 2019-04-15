@@ -1,0 +1,65 @@
+h1 {
+    text-align: center;
+}
+
+body {
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.new-movie-button {
+    margin-top: 15px;
+    background-color: rgb(167, 167, 167);
+    font-size: 30px;
+    padding: 10px 20px;
+}
+
+.hover-pink:hover {
+    background-color: pink;
+    cursor: pointer;
+}
+
+.hover-blue:hover {
+    background-color: powderblue;
+    cursor: pointer;
+}
+
+.all-movies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie-container {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: lightgray;
+    width: 300px;
+    height: 350px;
+    margin: 50px;
+    border-radius: 15px;
+    transition: 0.5s all;
+}
+
+.movie-title {
+    font-size: 22px;
+    margin-top: 15px;
+    color: black;
+}
+
+.movie-img {
+    width: 150px;
+    border-radius: 5px;
+}
+
+.movie-button {
+    margin-bottom: 15px;
+    background-color: rgb(167, 167, 167);
+}
+
